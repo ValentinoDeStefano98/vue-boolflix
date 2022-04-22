@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <HeaderComp/>
+    <HeaderComp @searchTitle="searchMetod"/>
     <MainComp/>
   </div>
 </template>
@@ -22,11 +22,12 @@ export default {
   },
   data(){
     return{
-      api_key: '4048103a1557792906164decde399a31'
+      api_key: '4048103a1557792906164decde399a31',
+      inputName: ''
     }    
   },
   created() {
-    axios.get( 'https://api.themoviedb.org/3/search/movie?api_key=4048103a1557792906164decde399a31&language=en-US&page=1&include_adult=false&query=rick')
+    axios.get( `https://api.themoviedb.org/3/search/movie?api_key=${this.api_key}&language=en-US&page=1&include_adult=false&query=${this.inputName}`)
       .then ((res) => {
         console.log(res.data.results);
       }),
@@ -34,6 +35,12 @@ export default {
       .then ((res) => {
         console.log(res.data.results);
       })
+  },
+  methods: {
+    searchMetod(name){
+      this.inputName = name
+      console.log(this.inputName)
+    }
   }
 }
 </script>
