@@ -10,7 +10,7 @@
                 <div class="col-4">
                     <form>
                         <div class="form-group d-flex justify-content-end">
-                            <input type="email" class="form-control w-50 me-2" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Digita il nome del film" v-model.trim="objectName">
+                            <input type="text" class="form-control w-50 me-2" placeholder="Digita il nome del film" v-model.trim="objectName">
                             <button type="submit" class="btn btn-danger" @click.prevent="$emit('searchTitle', objectName)">Cerca</button>
                         </div>
                     </form>                
@@ -26,6 +26,11 @@
 export default {
   //Cambiare il nome con quello del componente creato
   name: 'HeaderComp',
+  data(){
+      return{
+        objectName: '',  
+      }   
+    },
 }
 </script>
 
