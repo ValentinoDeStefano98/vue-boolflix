@@ -31,4 +31,8 @@ export default {
 
 <style scoped lang="scss">
  /*Inserire style componente*/
+.header{
+    height: 20vh;
+}
+
 </style>
