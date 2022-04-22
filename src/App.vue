@@ -6,6 +6,8 @@
 </template>
 
 <script>
+//import bootstrap
+import "bootstrap"
 import HelloWorld from './components/HelloWorld.vue'
 
 export default {
@@ -17,6 +19,9 @@ export default {
 </script>
 
 <style lang="scss">
+//import bootstrap
+@import "bootstrap/dist/css/bootstrap.min.css";
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
