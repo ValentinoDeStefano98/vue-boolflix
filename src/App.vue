@@ -1,19 +1,39 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <HeaderComp/>
+    <MainComp/>
   </div>
 </template>
 
 <script>
 //import bootstrap
 import "bootstrap"
-import HelloWorld from './components/HelloWorld.vue'
+import axios from 'axios';
+
+
+import HeaderComp from './components/HeaderComp.vue'
+import MainComp from './components/MainComp.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    HeaderComp,
+    MainComp
+  },
+  data(){
+    return{
+      api_key: '4048103a1557792906164decde399a31'
+    }    
+  },
+  created() {
+    axios.get( 'https://api.themoviedb.org/3/search/movie?api_key=4048103a1557792906164decde399a31&language=en-US&page=1&include_adult=false&query=rick')
+      .then ((res) => {
+        console.log(res.data.results);
+      }),
+    axios.get( 'https://api.themoviedb.org/3/search/tv?api_key=4048103a1557792906164decde399a31&language=en-US&page=1&include_adult=false&query=rick')
+      .then ((res) => {
+        console.log(res.data.results);
+      })
   }
 }
 </script>
