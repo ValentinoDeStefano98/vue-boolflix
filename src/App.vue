@@ -22,26 +22,27 @@ export default {
   },
   data(){
     return{
-      api_key: '4048103a1557792906164decde399a31',
+      api_key: "4048103a1557792906164decde399a31",
       inputName: ''
     }    
   },
   created() {
-    axios.get( `https://api.themoviedb.org/3/search/movie?api_key=${this.api_key}&language=en-US&page=1&include_adult=false&query=${this.inputName}`)
-      .then ((res) => {
-        console.log(res.data.results);
-      }),
-    axios.get( 'https://api.themoviedb.org/3/search/tv?api_key=4048103a1557792906164decde399a31&language=en-US&page=1&include_adult=false&query=rick')
-      .then ((res) => {
-        console.log(res.data.results);
-      })
+    //all'interno del created le api non vengono richiamate correttamente generando errore, quindi ho provato ad inserirle all'interno della funzione searchMetod
   },
   methods: {
     searchMetod(name){
       this.inputName = name
       console.log(this.inputName)
+      axios.get( `https://api.themoviedb.org/3/search/movie?api_key=${this.api_key}&language=en-US&page=1&include_adult=false&query=${this.inputName}`)
+        .then ((res) => {
+          console.log(res.data.results);
+      }),
+      axios.get( `https://api.themoviedb.org/3/search/tv?api_key=${this.api_key}&language=en-US&page=1&include_adult=false&query=${this.inputName}`)
+        .then ((res) => {
+          console.log(res.data.results);
+      })
     }
-  }
+  },
 }
 </script>
 
