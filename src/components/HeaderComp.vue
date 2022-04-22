@@ -1,7 +1,24 @@
 <template>
   <header>
     <!--inserire contenuto componente-->
-    ciao
+    <div class="bg-dark py-4">
+        <div class="container">
+            <div class="row d-flex align-items-center">
+                <div class="col-8 text-start">
+                    <h1 class="text-uppercase text-danger mb-0">Boolflix</h1>
+                </div>
+                <div class="col-4">
+                    <form>
+                        <div class="form-group d-flex justify-content-end">
+                            <input type="email" class="form-control w-50 me-2" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Digita il nome del film">
+                            <button type="submit" class="btn btn-danger">Cerca</button>
+                        </div>
+                    </form>                
+                </div>
+            </div>
+        </div>
+    </div>
+    
   </header>
 </template>
 

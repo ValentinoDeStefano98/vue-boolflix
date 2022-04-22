@@ -50,4 +50,10 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+
+html{
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
 </style>
