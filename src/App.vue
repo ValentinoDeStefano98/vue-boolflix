@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <HeaderComp @searchTitle="searchMetod"/>
-    <MainComp :propsArrayFilm="arrayFilms" :propsArraySeries="arraySeries"/>
+    <MainComp :propsArrayFilms="arrayFilms" :propsArraySeries="arraySeries"/>
   </div>
 </template>
 
