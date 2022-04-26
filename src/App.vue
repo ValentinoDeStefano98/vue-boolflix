@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <HeaderComp @searchTitle="searchMetod"/>
-    <MainComp/>
+    <MainComp :propsArrayFilm="arrayFilms" :propsArraySeries="arraySeries"/>
   </div>
 </template>
 
@@ -23,7 +23,9 @@ export default {
   data(){
     return{
       api_key: "4048103a1557792906164decde399a31",
-      inputName: ''
+      inputName: '',
+      arrayFilms: [],
+      arraySeries: []
     }    
   },
   created() {
@@ -36,10 +38,12 @@ export default {
       axios.get( `https://api.themoviedb.org/3/search/movie?api_key=${this.api_key}&language=en-US&page=1&include_adult=false&query=${this.inputName}`)
         .then ((res) => {
           console.log(res.data.results);
+          this.arrayFilms = res.data.results;
       }),
       axios.get( `https://api.themoviedb.org/3/search/tv?api_key=${this.api_key}&language=en-US&page=1&include_adult=false&query=${this.inputName}`)
         .then ((res) => {
           console.log(res.data.results);
+          this.arraySeries = res.data.results;
       })
     }
   },

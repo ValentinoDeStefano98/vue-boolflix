@@ -9,6 +9,10 @@
 export default {
   //Cambiare il nome con quello del componente creato
   name: 'MainComp',
+  props: {
+    propsArrayFilms: Array,
+    propsArraySeries: Array
+  }
 }
 </script>
 
