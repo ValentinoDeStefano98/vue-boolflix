@@ -2,22 +2,21 @@
     <div class="col py-3">
       <div class="border bg-dark text-white p-3">
           <!-- Titolo -->
-          <h4>{{arraySeries.name}}</h4>
+          <!-- <h4 >{{arraySeries.name}}</h4>   -->
           <!-- Titolo originale -->
-          <h6>{{arraySeries.original_name}}</h6>
+          <!-- <h6>{{arraySeries.original_name}}</h6> -->
           <!-- Lingua del contenuto -->
-          <div class="d-flex justify-content-center align-items-center">
+          <!-- <div class="d-flex justify-content-center align-items-center">
               <span>Lingua:</span>
               <span class="flagContainer" :class="(arraySeries.original_language == 'en') ? 'uk' : (arraySeries.original_language == 'it' ) ? 'ita' : 'unknown' "></span>
-          </div>
+          </div> -->
           <img :src="`https://image.tmdb.org/t/p/w342${arraySeries.poster_path}`" alt="">
           <!-- Voto del contenuto -->
-          <span>Voto: {{changeScore()}} </span>
-          <span v-if="changeScore() >= 1"><i class="fa-solid fa-star"></i></span>
+          <!-- <span v-if="changeScore() >= 1"><i class="fa-solid fa-star"></i></span>
           <span v-if="changeScore() >= 2"><i class="fa-solid fa-star"></i></span>
           <span v-if="changeScore() >= 3"><i class="fa-solid fa-star"></i></span>
           <span v-if="changeScore() >= 4"><i class="fa-solid fa-star"></i></span>
-          <span v-if="changeScore() >= 5"><i class="fa-solid fa-star"></i></span>
+          <span v-if="changeScore() >= 5"><i class="fa-solid fa-star"></i></span> -->
       </div>
   </div>
 </template>
