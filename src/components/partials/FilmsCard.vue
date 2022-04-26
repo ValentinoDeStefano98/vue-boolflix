@@ -10,9 +10,13 @@
               <span>Lingua:</span>
               <span class="flagContainer" :class="(arrayFilms.original_language == 'en') ? 'uk' : (arrayFilms.original_language == 'it' ) ? 'ita' : 'unknown' "></span>
           </div>
-          <img src="`https://image.tmdb.org/t/p/w342${arrayFilms.poster_path}'" alt="">
+          <img :src="`https://image.tmdb.org/t/p/w342${arrayFilms.poster_path}`" alt="">
           <!-- Voto del contenuto -->
-          <span>Voto: {{changeScore()}} </span>
+          <i class="fa-solid fa-star" :class="changeScore() >= 1 ? 'text-warning' : ''"></i>
+          <i class="fa-solid fa-star" :class="changeScore() >= 2 ? 'text-warning' : ''"></i>
+          <i class="fa-solid fa-star" :class="changeScore() >= 3 ? 'text-warning' : ''"></i>
+          <i class="fa-solid fa-star" :class="changeScore() >= 4 ? 'text-warning' : ''"></i>
+          <i class="fa-solid fa-star" :class="changeScore() == 5 ? 'text-warning' : ''"></i>
       </div>
   </div>
 </template>

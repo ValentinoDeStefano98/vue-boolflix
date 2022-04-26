@@ -10,9 +10,14 @@
               <span>Lingua:</span>
               <span class="flagContainer" :class="(arraySeries.original_language == 'en') ? 'uk' : (arraySeries.original_language == 'it' ) ? 'ita' : 'unknown' "></span>
           </div>
-          <img src="`https://image.tmdb.org/t/p/w342${arraySeries.poster_path}'" alt="">
+          <img :src="`https://image.tmdb.org/t/p/w342${arraySeries.poster_path}`" alt="">
           <!-- Voto del contenuto -->
           <span>Voto: {{changeScore()}} </span>
+          <span v-if="changeScore() >= 1"><i class="fa-solid fa-star"></i></span>
+          <span v-if="changeScore() >= 2"><i class="fa-solid fa-star"></i></span>
+          <span v-if="changeScore() >= 3"><i class="fa-solid fa-star"></i></span>
+          <span v-if="changeScore() >= 4"><i class="fa-solid fa-star"></i></span>
+          <span v-if="changeScore() >= 5"><i class="fa-solid fa-star"></i></span>
       </div>
   </div>
 </template>
