@@ -1,9 +1,13 @@
 <template>
-  <div>
-      <h2>Film</h2>
-      <FilmsCard v-for="(elem, index) in propsArrayFilms2" :key="index" :arrayFilms="elem"/>
-      <h2>TV Series</h2>
-      <SeriesCard v-for="(elem, index) in propsArraySeries2" :key="index" :arraySeries="elem"/>
+  <div class="container">
+    <h2>Film</h2>
+    <div class="row row-cols-5">
+        <FilmsCard v-for="(elem, index) in propsArrayFilms2" :key="index" :arrayFilms="elem"/>
+    </div>
+    <h2>TV Series</h2>
+    <div class="row row-cols-5">
+        <SeriesCard v-for="(elem, index) in propsArraySeries2" :key="index" :arraySeries="elem"/>
+    </div>   
   </div>
 </template>
 
