@@ -10,6 +10,7 @@
               <span>Lingua:</span>
               <span class="flagContainer" :class="(arraySeries.original_language == 'en') ? 'uk' : (arraySeries.original_language == 'it' ) ? 'ita' : 'unknown' "></span>
           </div>
+          <img src="`https://image.tmdb.org/t/p/w342${arraySeries.poster_path}'" alt="">
           <!-- Voto del contenuto -->
           <span>Voto: {{changeScore()}} </span>
       </div>
