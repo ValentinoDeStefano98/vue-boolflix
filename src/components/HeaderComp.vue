@@ -1,13 +1,14 @@
 <template>
   <header>
-    <!--inserire contenuto componente-->
     <div class="bg-dark py-4">
         <div class="container">
             <div class="row d-flex align-items-center">
+                <!-- Logo / titolo -->
                 <div class="col-8 text-start">
                     <h1 class="text-uppercase text-danger mb-0">Boolflix</h1>
                 </div>
                 <div class="col-4">
+                    <!-- Barra di ricerca -->
                     <form>
                         <div class="form-group d-flex justify-content-end">
                             <input type="text" class="form-control w-50 me-2" placeholder="Digita il nome del film" v-model.trim="objectName" @keydown.enter.prevent="$emit( 'searchTitle', objectName)">
@@ -17,14 +18,12 @@
                 </div>
             </div>
         </div>
-    </div>
-    
+    </div>   
   </header>
 </template>
 
 <script>
 export default {
-  //Cambiare il nome con quello del componente creato
   name: 'HeaderComp',
   data(){
       return{
@@ -39,5 +38,4 @@ export default {
 .header{
     height: 20vh;
 }
-
 </style>

@@ -2,10 +2,12 @@
   <div class="container">
     <h2>Film</h2>
     <div class="row row-cols-5">
+        <!-- Card dei film -->
         <FilmsCard v-for="(elem, index) in propsArrayFilms2" :key="index" :arrayFilms="elem"/>
     </div>
     <h2>TV Series</h2>
     <div class="row row-cols-5">
+        <!-- Card delle serie tv -->
         <SeriesCard v-for="(elem, index) in propsArraySeries2" :key="index" :arraySeries="elem"/>
     </div>   
   </div>
@@ -15,7 +17,6 @@
 import FilmsCard from './FilmsCard'
 import SeriesCard from './SeriesCard'
 export default {
-  //Cambiare il nome con quello del componente creato
   name: 'FilmsComp',
   components: {
       FilmsCard,

@@ -1,6 +1,6 @@
 <template>
   <div class="big">
-    <!--inserire contenuto componente-->
+    <!-- Componente contenitore di tutti i film / serie tv con props da passare ai figli per ottenere i valori da stampare -->
     <FilmsComp :propsArrayFilms2="propsArrayFilms" :propsArraySeries2="propsArraySeries"/>
   </div>
 </template>
@@ -22,7 +22,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
- /*Inserire style componente*/
  .big{
      height: 80vh;
      background-color: grey;

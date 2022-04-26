@@ -1,6 +1,8 @@
 <template>
   <div id="app">
+    <!-- Sezione header con logo e barra di ricerca / emit per importare il contenuto della ricerca -->
     <HeaderComp @searchTitle="searchMetod"/>
+    <!-- Sezione contenente tutti i film e le serie tv filtrate in base alla ricerca / props con valore da passare ai figli -->
     <MainComp :propsArrayFilms="arrayFilms" :propsArraySeries="arraySeries"/>
   </div>
 </template>
@@ -8,9 +10,10 @@
 <script>
 //import bootstrap
 import "bootstrap"
+//import axios
 import axios from 'axios';
 
-
+//import componenti
 import HeaderComp from './components/HeaderComp.vue'
 import MainComp from './components/MainComp.vue'
 
@@ -38,11 +41,13 @@ export default {
       axios.get( `https://api.themoviedb.org/3/search/movie?api_key=${this.api_key}&language=en-US&page=1&include_adult=false&query=${this.inputName}`)
         .then ((res) => {
           console.log(res.data.results);
+          //assegno il valore dell'api ad un array di film inizialmente vuoto
           this.arrayFilms = res.data.results;
       }),
       axios.get( `https://api.themoviedb.org/3/search/tv?api_key=${this.api_key}&language=en-US&page=1&include_adult=false&query=${this.inputName}`)
         .then ((res) => {
           console.log(res.data.results);
+          //assegno il valore dell'api ad un array di serie tv inizialmente vuoto
           this.arraySeries = res.data.results;
       })
     }
