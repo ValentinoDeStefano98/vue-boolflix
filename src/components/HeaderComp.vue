@@ -4,8 +4,15 @@
         <div class="container">
             <div class="row d-flex align-items-center">
                 <!-- Logo / titolo -->
-                <div class="col-8 text-start">
+                <div class="col-8 text-start d-flex align-items-center">
                     <h1 class="text-uppercase text-danger mb-0">Boolflix</h1>
+                    <ul class="text-white d-flex align-items-center m-0">
+                        <li>Home</li>
+                        <li>Serie TV</li>
+                        <li>Film</li>
+                        <li>Nuovi e popolari</li>
+                        <li>La mia lista</li>
+                    </ul>
                 </div>
                 <div class="col-4">
                     <!-- Barra di ricerca -->
@@ -37,5 +44,10 @@ export default {
  /*Inserire style componente*/
 .header{
     height: 20vh;
+}
+
+li{
+    list-style: none;
+    margin: 0 10px;
 }
 </style>
