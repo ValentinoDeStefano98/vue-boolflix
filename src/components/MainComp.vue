@@ -1,7 +1,7 @@
 <template>
   <div class="big">
     <!-- Componente contenitore di tutti i film / serie tv con props da passare ai figli per ottenere i valori da stampare -->
-    <FilmsComp :propsArrayFilms2="propsArrayFilms" :propsArraySeries2="propsArraySeries"/>
+    <FilmsComp :propsArrayFilms2="propsArrayFilms" :propsArraySeries2="propsArraySeries" :propsArrayActors2="propsArrayActors"/>
   </div>
 </template>
 
@@ -16,7 +16,8 @@ export default {
   },
   props: {
     propsArrayFilms: Array,
-    propsArraySeries: Array
+    propsArraySeries: Array,
+    propsArrayActors: Array
   }
 }
 </script>

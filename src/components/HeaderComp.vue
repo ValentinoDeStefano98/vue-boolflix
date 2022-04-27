@@ -7,11 +7,11 @@
                 <div class="col-8 text-start d-flex align-items-center">
                     <h1 class="text-uppercase text-danger mb-0">Boolflix</h1>
                     <ul class="text-white d-flex align-items-center m-0">
-                        <li>Home</li>
-                        <li>Serie TV</li>
-                        <li>Film</li>
-                        <li>Nuovi e popolari</li>
-                        <li>La mia lista</li>
+                        <li class="fw-bold" role="button">Home</li>
+                        <li role="button">Serie TV</li>
+                        <li role="button">Film</li>
+                        <li role="button">Nuovi e popolari</li>
+                        <li role="button">La mia lista</li>
                     </ul>
                 </div>
                 <div class="col-4">

@@ -3,7 +3,7 @@
     <!-- Sezione header con logo e barra di ricerca / emit per importare il contenuto della ricerca -->
     <HeaderComp @searchTitle="searchMetod"/>
     <!-- Sezione contenente tutti i film e le serie tv filtrate in base alla ricerca / props con valore da passare ai figli -->
-    <MainComp :propsArrayFilms="arrayFilms" :propsArraySeries="arraySeries"/>
+    <MainComp :propsArrayFilms="arrayFilms" :propsArraySeries="arraySeries" :propsArrayActors="arrayActors"/>
   </div>
 </template>
 
@@ -28,7 +28,8 @@ export default {
       api_key: "4048103a1557792906164decde399a31",
       inputName: '',
       arrayFilms: [],
-      arraySeries: []
+      arraySeries: [],
+      arrayActors: []
     }    
   },
   created() {
@@ -49,6 +50,12 @@ export default {
           console.log(res.data.results);
           //assegno il valore dell'api ad un array di serie tv inizialmente vuoto
           this.arraySeries = res.data.results;
+      })
+      axios.get( `https://api.themoviedb.org/3/search/person?api_key=${this.api_key}&language=en-US&page=1&include_adult=false&query=${this.inputName}`)
+        .then ((res) => {
+          console.log(res.data.results);
+          //assegno il valore dell'api ad un array di serie tv inizialmente vuoto
+          this.arrayActors = res.data.results;
       })
     }
   },
