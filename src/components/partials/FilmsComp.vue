@@ -1,12 +1,12 @@
 <template>
   <div class="container">
-    <h2>Film</h2>
-    <div class="row row-cols-3">
+    <h2 v-if="propsArrayFilms2 != ''">Film</h2>
+    <div class="row row-cols-4">
         <!-- Card dei film -->
         <FilmsCard v-for="(elem, index) in propsArrayFilms2" :key="index" :arrayFilms="elem"/>
     </div>
-    <h2>TV Series</h2>
-    <div class="row row-cols-3">
+    <h2 v-if="propsArraySeries2 != ''">TV Series</h2>
+    <div class="row row-cols-4">
         <!-- Card delle serie tv -->
         <SeriesCard v-for="(elem, index) in propsArraySeries2" :key="index" :arraySeries="elem"/>
     </div>   
