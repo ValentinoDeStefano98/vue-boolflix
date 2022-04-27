@@ -1,28 +1,23 @@
 <template>
     <div class="col py-3">
       <div class="text-white p-3">
-          <!-- Titolo -->
-          <!-- <h4>{{arrayFilms.title}}</h4> -->
-          <!-- Titolo originale -->
-          <!-- <h6>{{arrayFilms.original_title}}</h6> -->
-          <!-- Lingua del contenuto -->
-          <!-- <div class="d-flex justify-content-center align-items-center">
-              <span>Lingua:</span>
-              <span class="flagContainer" :class="(arrayFilms.original_language == 'en') ? 'uk' : (arrayFilms.original_language == 'it' ) ? 'ita' : 'unknown' "></span>
-          </div> -->
+          <!-- Container principale della card -->
           <div class="flip-card">
+              <!-- Contenuto interno della card -->
               <div class="flip-card-inner">
+                  <!-- Poster della card -->
                   <div class="flip-card-front">
                       <img :src="`https://image.tmdb.org/t/p/w342${arrayFilms.poster_path}`" alt="" class="poster-img">
                   </div>
+                  <!-- Retro della card -->
                   <div class="flip-card-back">
-                        <h4>{{arrayFilms.title}}</h4>
+                        <h2 class="fw-bold">{{arrayFilms.title}}</h2>
                         <h6>{{arrayFilms.original_title}}</h6>
                         <div class="d-flex justify-content-center align-items-center">
-                            <span>Lingua:</span>
-                            <span class="flagContainer" :class="(arrayFilms.original_language == 'en') ? 'uk' : (arrayFilms.original_language == 'it' ) ? 'ita' : 'unknown' "></span>
+                            <span class="d-inline-block">Lingua: </span>
+                            <span class="flagContainer d-inline-block " :class="(arrayFilms.original_language == 'en') ? 'uk' : (arrayFilms.original_language == 'it' ) ? 'ita' : 'unknown' "></span>
                         </div>
-                        <div>
+                        <div class="my-3">
                             <i class="fa-solid fa-star" :class="changeScore() >= 1 ? 'text-warning' : ''"></i>
                             <i class="fa-solid fa-star" :class="changeScore() >= 2 ? 'text-warning' : ''"></i>
                             <i class="fa-solid fa-star" :class="changeScore() >= 3 ? 'text-warning' : ''"></i>
@@ -80,7 +75,7 @@ export default {
 }
 
 .uk{
-    background-image: url(./../../assets/img/uk.jpg);
+    background-image: url(./../../assets/img/uk-flag.png);
 }
 
 .unknown{
@@ -117,6 +112,7 @@ export default {
   position: absolute;
   width: 100%;
   height: 100%;
+  overflow: auto;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
@@ -130,6 +126,7 @@ export default {
   background-color: black;
   color: white;
   transform: rotateY(180deg);
+  padding: 10px;
 }
 
 </style>

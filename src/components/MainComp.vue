@@ -22,9 +22,11 @@ export default {
 </script>
 
 <style scoped lang="scss">
- .big{
-     height: 80vh;
-     background-color: grey;
-     overflow: auto;
- }
+
+.big{
+    height: 80vh;
+    background-color: grey;
+    overflow: auto;
+}
+
 </style>

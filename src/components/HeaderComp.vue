@@ -42,7 +42,7 @@ export default {
 
 <style scoped lang="scss">
  /*Inserire style componente*/
-.header{
+template{
     height: 20vh;
 }
 
